@@ -1,6 +1,10 @@
 /********************************
 Praveen R
 QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot.
+Time Complx : Avg  - O(nlogn) 
+            : Worst - O(n2)
+Space Complx : Avg - O(logn)
+             : Worst - O(n)
 *********************************/
 
 #include <iostream>
@@ -18,11 +22,19 @@ int partitionSort(int *A,int start, int end){
     swap(A[index],A[end]);
     
     return index;
-}
+} 
+//It will aviod worst case 
+/*
+void  Random_partitionSort(int *A,int start, int end){
+    int pivotIndex = random(start,end);
+    swap(A[pivotIndex],A[end]);
+    partitionSort(A,start,end); 
+}*/
 
 void quickSort(int *A, int start, int end){
     if(start < end){
-        int pindex = partitionSort(A,start,end);
+        int pindex = partitionSort(A,start,end); 
+        //int pindex = Random_partitionSort(A,start,end); 
         quickSort(A,start,pindex-1);
         quickSort(A,pindex+1,end);
     }
