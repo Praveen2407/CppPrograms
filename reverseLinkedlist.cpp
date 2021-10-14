@@ -1,7 +1,7 @@
 /******************************************************************************
 Praveen R
  Linked list : Add(), reverseList and display
-
+iterative and recursive methods for reversing linkedlist. 
 *******************************************************************************/
 #include <iostream>
 using namespace std;
@@ -34,8 +34,8 @@ void add(){
         ptr->next = new_node;
     }
 }
-
-void reverseList(){
+//Iterative method
+void reverseList(list *head){
     
     list *pre, *tmp, *cur;
     pre = nullptr;
@@ -52,7 +52,19 @@ void reverseList(){
     head= pre;
     }
     
-}
+ //Recusive method/* 
+void reverseList(list *cur){
+  
+    if(cur->next == nullptr){
+        head = cur;
+        return;
+    }
+    reverseList(cur->next);
+    list *tmp = cur->next;
+    tmp->next = cur;
+    cur->next = nullptr;
+}*/
+
 void display(){
     list *ptr = head;
     list *tmp = head;
@@ -84,7 +96,7 @@ int main()
         switch(input){
             case 1: add();
                     break;
-            case 2: reverseList();
+            case 2: reverseList(head);
                     break;
             case 3: display();
                     break;
