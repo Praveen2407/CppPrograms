@@ -25,7 +25,7 @@ void divide(string str, int n)
 	}
 	
 	int loops = str.length() / n; // split the string into n loops
-	int parts, size; part=size=n;	//to reverse the substring
+	int parts, size; parts=size=n;	//to reverse the substring
 	int start = 0;
 
 	cout << "Loops:" <<loops<<endl;
