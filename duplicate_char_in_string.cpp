@@ -24,6 +24,13 @@ int main()
         auto result = m.insert(pair<char,int>(str[i], 1));
             if (result.second == false)
                 result.first->second++;
+        
+        /* another solution
+        m.insert(pair<char,int>(str[i],0));
+        auto res = m.find(str[i]);
+        if(res!= m.end())
+            res->second++;
+        */
     }
 
     map<char , int >::iterator itr;    
