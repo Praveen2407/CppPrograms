@@ -20,6 +20,7 @@ void fun(string ss){
   for(int i =0;i<ss.length();i++)
 		m[ss[i]]++;
   
+	
   auto it = m.begin();
   for(;it!=m.end();it++){
   	if(it->second == 2)
