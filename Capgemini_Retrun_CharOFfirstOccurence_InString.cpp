@@ -23,7 +23,7 @@ void fun(string ss){
 	
   auto it = m.begin();
   for(;it!=m.end();it++){
-  	if(it->second == 2)
+  	if(it->second >= 2)
 	  	cout << it->first <<endl;
   }
   
